@@ -5,18 +5,20 @@ import ManualHeader from "./Components/ManualHeader";
 import { MoralisProvider } from "react-moralis";
 import Header from "./Components/Header";
 import LotteryEntrance from "./Components/LotteryEntrance";
+import { NotificationProvider } from "@web3uikit/core";
 
 export default function Home() {
   return (
     <MoralisProvider initializeOnMount={false}>
-      <main>
-        <div>Hello</div>
-        {/* header componentes */}
-        <Header />
+      <NotificationProvider>
+        <main>
+          {/* header componentes */}
+          <Header />
 
-        {/* lottery entrance */}
-        <LotteryEntrance />
-      </main>
+          {/* lottery entrance */}
+          <LotteryEntrance />
+        </main>
+      </NotificationProvider>
     </MoralisProvider>
   );
 }
