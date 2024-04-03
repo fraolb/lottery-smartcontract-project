@@ -1,18 +1,22 @@
-import Image from "next/image";
-import Header from "./Components/Header";
+"use client";
 
-export const metadata = {
-  title: "Smart Contract Lottery",
-  description:
-    "This is a simple smart contract lottery system that is autmated and function all by it self",
-};
+import Image from "next/image";
+import ManualHeader from "./Components/ManualHeader";
+import { MoralisProvider } from "react-moralis";
+import Header from "./Components/Header";
+import LotteryEntrance from "./Components/LotteryEntrance";
 
 export default function Home() {
   return (
-    <main>
-      <div>Hello</div>
-      {/* header componentes */}
-      <Header />
-    </main>
+    <MoralisProvider initializeOnMount={false}>
+      <main>
+        <div>Hello</div>
+        {/* header componentes */}
+        <Header />
+
+        {/* lottery entrance */}
+        <LotteryEntrance />
+      </main>
+    </MoralisProvider>
   );
 }
