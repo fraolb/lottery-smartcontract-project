@@ -144,6 +144,7 @@ contract SimpleLotterySystem is
         s_recentWinner = recentWinner;
         s_players = new address payable[](0);
         s_LotteryState = LotteryState.OPEN;
+        s_lastTimeStamp = block.timestamp;
         (bool succuss, ) = recentWinner.call{value: address(this).balance}("");
         if (!succuss) {
             revert Lottery__TransactionFailed();
