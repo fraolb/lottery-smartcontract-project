@@ -102,11 +102,43 @@ const LotteryEntrance = () => {
 
   return (
     <div className="p-4 text-xl">
-      <div>The entrance fee is: {formatEther(entranceFee)} ETH</div>
-      <div>The number of Players is: {numPlayers} </div>
-      <div>The recent winner is: {recentWinner} </div>
-      <div>The Prize Pool is: {formatEther(prizePool)} </div>
-      <div>The Lottery State is: {lotteryState} </div>
+      <div className="flex justify-around m-4">
+        <div className="text-center shadow-md p-4 rounded-md border border-indigo-500/100 w-1/3 m-4">
+          <div className="text-6xl text-indigo-700 font-bold italic">
+            {formatEther(entranceFee)}
+          </div>
+          <div className="text-3xl font-light text-indigo-700">
+            entrance fee
+          </div>
+        </div>
+        <div className="text-center shadow-md p-4 rounded-md border border-indigo-500/100 w-1/3 m-4">
+          <div className="text-6xl text-indigo-700 font-bold italic">
+            {formatEther(prizePool)}
+          </div>
+          <div className="text-3xl font-light text-indigo-700">prize pool</div>
+        </div>
+        <div className="text-center shadow-md p-4 rounded-md border border-indigo-500/100 w-1/3 m-4">
+          <div className="text-6xl text-indigo-700 font-bold italic">
+            {numPlayers}
+          </div>
+          <div className="text-3xl font-light text-indigo-700">
+            number of Players
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="flex justify-around text-indigo-700">
+          {recentWinner}
+        </div>
+        <div className="flex justify-around text-indigo-700 italic">
+          recent winner
+        </div>
+      </div>
+
+      <div className="flex justify-around m-4 text-indigo-700">
+        The Lottery State is: {lotteryState == "0" ? "On" : "Off"}{" "}
+      </div>
       <div className="p-4 flex justify-center">
         <button
           onClick={async () => {
