@@ -1,9 +1,11 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { useWeb3Contract } from "react-moralis";
 import { useMoralis } from "react-moralis";
 import { ethers } from "ethers";
-import { abi } from "../../constants/abi";
-import { contractAddress } from "../../constants/contractAddress";
+import { abi } from "../constants/abi";
+import { contractAddress } from "../constants/contractAddress";
 import { formatEther } from "ethers/lib/utils";
 import { useNotification } from "@web3uikit/core";
 
